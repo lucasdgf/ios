@@ -7,6 +7,9 @@ target 'ios' do
 
   # Pods for ios
   pod 'Firebase/Core'
+  pod 'FacebookCore'
+  pod 'FacebookLogin'
+  pod 'FacebookShare'
 
   target 'iosTests' do
     inherit! :search_paths
