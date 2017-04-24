@@ -6,6 +6,7 @@
 //  Copyright © 2017 Everyday Activism. All rights reserved.
 //
 
+import Firebase
 import XCTest
 @testable import ios
 
@@ -33,4 +34,19 @@ class iosTests: XCTestCase {
         }
     }
     
+    //MARK: ActionType Class Tests
+    
+    // Confirm that the ActionType initializer returns a ActionType object when passed valid parameters.
+    func testMealInitializationSucceeds() {
+        let validStringActionType = ActionType.init(name: "Action type", backgroundImage: UIImage.init())
+        XCTAssertNotNil(validStringActionType)
+        // Confirm that name gets turned into uppercase.
+        XCTAssertEqual(validStringActionType?.name, "ACTION TYPE")
+    }
+    
+    // Confirm that the ActionType initialier returns nil when passed an empty name.
+    func testMealInitializationFails() {
+        let emptyStringActionType = ActionType.init(name: "", backgroundImage: UIImage.init())
+        XCTAssertNil(emptyStringActionType)
+    }
 }

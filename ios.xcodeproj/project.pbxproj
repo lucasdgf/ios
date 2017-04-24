@@ -10,6 +10,9 @@
 		0EAFCEFD2562C9499E0A1D08 /* Pods_iosUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9EE20EEAE006A61D43E862DD /* Pods_iosUITests.framework */; };
 		30EAB5D1ADB982F4393FC796 /* Pods_ios.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 337C821D261FF141505C151A /* Pods_ios.framework */; };
 		9C8947DEA6EB18246071DB49 /* Pods_iosTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 698E19EADCF401253BCDFB58 /* Pods_iosTests.framework */; };
+		ADA0B9431EAD5DBA00C54B08 /* ActionTypeTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADA0B9421EAD5DBA00C54B08 /* ActionTypeTableViewController.swift */; };
+		ADA0B9451EAD64C100C54B08 /* ActionTypeTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADA0B9441EAD64C100C54B08 /* ActionTypeTableViewCell.swift */; };
+		ADA0B9471EAD69D800C54B08 /* ActionType.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADA0B9461EAD69D800C54B08 /* ActionType.swift */; };
 		ADF396201EA311D400410C06 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADF3961F1EA311D400410C06 /* AppDelegate.swift */; };
 		ADF396221EA311D400410C06 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADF396211EA311D400410C06 /* ViewController.swift */; };
 		ADF396251EA311D400410C06 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = ADF396231EA311D400410C06 /* Main.storyboard */; };
@@ -46,6 +49,9 @@
 		698E19EADCF401253BCDFB58 /* Pods_iosTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_iosTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		9EE20EEAE006A61D43E862DD /* Pods_iosUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_iosUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		9EF6B9554E339CAC1B218751 /* Pods-ios.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ios.release.xcconfig"; path = "Pods/Target Support Files/Pods-ios/Pods-ios.release.xcconfig"; sourceTree = "<group>"; };
+		ADA0B9421EAD5DBA00C54B08 /* ActionTypeTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ActionTypeTableViewController.swift; sourceTree = "<group>"; };
+		ADA0B9441EAD64C100C54B08 /* ActionTypeTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ActionTypeTableViewCell.swift; sourceTree = "<group>"; };
+		ADA0B9461EAD69D800C54B08 /* ActionType.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ActionType.swift; sourceTree = "<group>"; };
 		ADF3961C1EA311D400410C06 /* ios.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ios.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		ADF3961F1EA311D400410C06 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		ADF396211EA311D400410C06 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -119,6 +125,9 @@
 				ADF3961F1EA311D400410C06 /* AppDelegate.swift */,
 				ADF396211EA311D400410C06 /* ViewController.swift */,
 				ADF396231EA311D400410C06 /* Main.storyboard */,
+				ADA0B9441EAD64C100C54B08 /* ActionTypeTableViewCell.swift */,
+				ADA0B9421EAD5DBA00C54B08 /* ActionTypeTableViewController.swift */,
+				ADA0B9461EAD69D800C54B08 /* ActionType.swift */,
 				ADF396261EA311D400410C06 /* Assets.xcassets */,
 				ADF396281EA311D400410C06 /* LaunchScreen.storyboard */,
 				ADF3962B1EA311D400410C06 /* Info.plist */,
@@ -452,6 +461,9 @@
 			files = (
 				ADF396221EA311D400410C06 /* ViewController.swift in Sources */,
 				ADF396201EA311D400410C06 /* AppDelegate.swift in Sources */,
+				ADA0B9471EAD69D800C54B08 /* ActionType.swift in Sources */,
+				ADA0B9431EAD5DBA00C54B08 /* ActionTypeTableViewController.swift in Sources */,
+				ADA0B9451EAD64C100C54B08 /* ActionTypeTableViewCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

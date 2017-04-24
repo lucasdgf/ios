@@ -14,6 +14,7 @@ target 'ios' do
   target 'iosTests' do
     inherit! :search_paths
     # Pods for testing
+    pod 'Firebase/Core'
   end
 
   target 'iosUITests' do
