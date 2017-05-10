@@ -1,5 +1,5 @@
 //
-//  ActionTypeTableViewController.swift
+//  ActionsTableViewController.swift
 //  ios
 //
 //  Created by Lucas Freitas on 4/23/17.
@@ -8,20 +8,17 @@
 
 import UIKit
 
-class ActionTypeTableViewController: UITableViewController {
+class ActionsTableViewController: UITableViewController {
     
     //MARK: Properties
     
-    var actionTypes = [ActionType]()
+    var actions = [ActionPreview]()
 
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        // Remove header.
-        self.tableView.tableHeaderView = nil
-
-        // Load the action type data.
-        loadActionTypes()
+        // Load the actions data.
+        loadActions()
     }
 
     override func didReceiveMemoryWarning() {
@@ -40,23 +37,23 @@ class ActionTypeTableViewController: UITableViewController {
     }
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return actionTypes.count
+        return actions.count
     }
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
         // Table view cells are reused and should be dequeued using a cell identifier.
-        let cellIdentifier = "ActionTypeTableViewCell"
+        let cellIdentifier = "ActionsTableViewCell"
         
-        guard let cell = tableView.dequeueReusableCell(withIdentifier: cellIdentifier, for: indexPath) as? ActionTypeTableViewCell  else {
-            fatalError("The dequeued cell is not an instance of ActionTypeTableViewCell.")
+        guard let cell = tableView.dequeueReusableCell(withIdentifier: cellIdentifier, for: indexPath) as? ActionsTableViewCell  else {
+            fatalError("The dequeued cell is not an instance of ActionsTableViewCell.")
         }
         
-        // Fetches the appropriate action type for the data source layout.
-        let actionType = actionTypes[indexPath.row]
+        // Fetches the appropriate action for the data source layout.
+        let action = actions[indexPath.row]
         
         // Title.
-        cell.setText(text: actionType.name)
+        cell.setText(text: action.name)
         
         // Set title margins.
         let margins = self.view.layoutMarginsGuide
@@ -75,43 +72,49 @@ class ActionTypeTableViewController: UITableViewController {
         }
         
         // Background image.
-        cell.backgroundView = UIImageView(image: actionType.backgroundImage)
+        cell.backgroundView = UIImageView(image: action.backgroundImage)
         cell.backgroundView!.contentMode = UIViewContentMode.scaleAspectFill
         
         return cell
     }
     
     override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        return self.view.bounds.size.height / CGFloat(actionTypes.count)
+        return self.view.bounds.size.height / CGFloat(actions.count)
     }
-    
-    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        self.performSegue(withIdentifier: "showActions", sender: indexPath)
-    }
-    
 
-    //MARK: Private Methods
-    
-    private func loadActionTypes() {
+    private func loadActions() {
         let backgroundImage0 = UIImage(named: "actiontype0")
         let backgroundImage1 = UIImage(named: "actiontype1")
         let backgroundImage2 = UIImage(named: "actiontype2")
         
-        guard let actionType0 = ActionType(name: "Solo Action",
-                                           backgroundImage: backgroundImage0) else {
-            fatalError("Unable to instantiate actionType0")
+        guard let action0 = ActionPreview(name: "Disrupt Market",
+                                          backgroundImage: backgroundImage0,
+                                          points: 4) else {
+                                            fatalError("Unable to instantiate actionType0")
         }
         
-        guard let actionType1 = ActionType(name: "One-on-one Chat",
-                                           backgroundImage: backgroundImage1) else {
-            fatalError("Unable to instantiate actionType1")
+        guard let action1 = ActionPreview(name: "Volunteer at Sanctuary",
+                                          backgroundImage: backgroundImage1,
+                                          points: 3) else {
+                                            fatalError("Unable to instantiate actionType1")
         }
         
-        guard let actionType2 = ActionType(name: "Organize action",
-                                           backgroundImage: backgroundImage2) else {
-            fatalError("Unable to instantiate actionType2")
+        guard let action2 = ActionPreview(name: "Large Protest",
+                                          backgroundImage: backgroundImage2,
+                                          points: 5) else {
+                                            fatalError("Unable to instantiate actionType2")
         }
         
-        actionTypes += [actionType0, actionType1, actionType2]
+        actions += [action0, action1, action2]
+    }
+    
+    // In a storyboard-based application, you will often want to do a little preparation before navigation
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        // Get the new view controller using segue.destinationViewController.
+        // Pass the selected object to the new view controller.
+    }
+    
+    @IBAction func back(_ sender: Any) {
+        dismiss(animated: true, completion: nil)
     }
 }

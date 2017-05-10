@@ -5,7 +5,7 @@
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12118"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12086"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -25,14 +25,14 @@
                                     <rect key="frame" x="0.0" y="0.0" width="375" height="200"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
-                                        <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" scrollEnabled="NO" editable="NO" text="Action Type Example" textAlignment="natural" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="RJY-wz-vkD">
-                                            <rect key="frame" x="8" y="59" width="191" height="81"/>
+                                        <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" ambiguous="YES" scrollEnabled="NO" editable="NO" text="Action Type Example" textAlignment="natural" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="RJY-wz-vkD">
+                                            <rect key="frame" x="8" y="75.5" width="316" height="48.5"/>
                                             <fontDescription key="fontDescription" name="GillSans-Bold" family="Gill Sans" pointSize="28"/>
                                             <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                                         </textView>
                                     </subviews>
                                     <constraints>
-                                        <constraint firstItem="RJY-wz-vkD" firstAttribute="centerY" secondItem="lLA-o0-anh" secondAttribute="centerY" id="g6z-4E-Xxz"/>
+                                        <constraint firstItem="RJY-wz-vkD" firstAttribute="centerY" secondItem="lLA-o0-anh" secondAttribute="centerY" id="IFx-XV-tpn"/>
                                     </constraints>
                                 </tableViewCellContentView>
                                 <gestureRecognizers/>
@@ -46,10 +46,79 @@
                             <outlet property="delegate" destination="9Vb-07-u5c" id="jhV-xG-MHf"/>
                         </connections>
                     </tableView>
+                    <connections>
+                        <segue destination="oxU-nZ-tN3" kind="custom" identifier="showActions" customClass="SegueFromLeft" customModule="ios" customModuleProvider="target" id="cXh-3n-qki"/>
+                    </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="s4N-0v-5DF" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="824.79999999999995" y="104.7976011994003"/>
+        </scene>
+        <!--Actions Table View Controller-->
+        <scene sceneID="TAM-bq-L2j">
+            <objects>
+                <tableViewController id="NXF-nT-d4b" customClass="ActionsTableViewController" customModule="ios" customModuleProvider="target" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" id="bZi-82-bjm">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <prototypes>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="ActionsTableViewCell" rowHeight="200" id="mWn-aP-w0s" customClass="ActionsTableViewCell" customModule="ios" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="28" width="375" height="200"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="mWn-aP-w0s" id="Wk0-QP-LFc">
+                                    <rect key="frame" x="0.0" y="0.0" width="375" height="200"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" ambiguous="YES" scrollEnabled="NO" editable="NO" text="Action Example" textAlignment="natural" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="s8X-nO-qXU">
+                                            <rect key="frame" x="8" y="76" width="236" height="48.5"/>
+                                            <fontDescription key="fontDescription" name="GillSans-Bold" family="Gill Sans" pointSize="28"/>
+                                            <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                                        </textView>
+                                    </subviews>
+                                    <constraints>
+                                        <constraint firstItem="s8X-nO-qXU" firstAttribute="centerY" secondItem="Wk0-QP-LFc" secondAttribute="centerY" id="TmW-Of-O3S"/>
+                                    </constraints>
+                                </tableViewCellContentView>
+                                <connections>
+                                    <outlet property="nameTextView" destination="s8X-nO-qXU" id="byh-Du-zlm"/>
+                                </connections>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="NXF-nT-d4b" id="v4S-UQ-wmr"/>
+                            <outlet property="delegate" destination="NXF-nT-d4b" id="hp7-aw-Xsa"/>
+                        </connections>
+                    </tableView>
+                    <navigationItem key="navigationItem" id="563-wg-LBY">
+                        <barButtonItem key="leftBarButtonItem" title="Back" id="chW-hC-fSY">
+                            <connections>
+                                <action selector="back:" destination="NXF-nT-d4b" id="b5z-Sr-6Oe"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="qXB-wR-CkU" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2885.5999999999999" y="104.7976011994003"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="vpm-SG-9Sv">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="oxU-nZ-tN3" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="kiD-fg-yT9">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="NXF-nT-d4b" kind="relationship" relationship="rootViewController" id="T3a-ph-TdG"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="PfA-8F-HPe" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1944.8" y="104.7976011994003"/>
         </scene>
     </scenes>
 </document>

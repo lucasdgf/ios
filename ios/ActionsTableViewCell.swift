@@ -1,22 +1,20 @@
 //
-//  ActionTypeTableViewCell.swift
+//  ActionsTableViewCell.swift
 //  ios
 //
-//  Created by Lucas Freitas on 4/23/17.
+//  Created by Lucas Freitas on 4/24/17.
 //  Copyright © 2017 Everyday Activism. All rights reserved.
 //
 
 import UIKit
 
-class ActionTypeTableViewCell: UITableViewCell {
-    
-    // MARK: Properties
-    
+class ActionsTableViewCell: UITableViewCell {
+
     @IBOutlet weak var nameTextView: UITextView!
     
     override func awakeFromNib() {
         super.awakeFromNib()
-        
+       
         // Don't allow cells to be selected.
         self.selectionStyle = UITableViewCellSelectionStyle.none
         

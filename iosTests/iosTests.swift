@@ -37,7 +37,7 @@ class iosTests: XCTestCase {
     //MARK: ActionType Class Tests
     
     // Confirm that the ActionType initializer returns a ActionType object when passed valid parameters.
-    func testMealInitializationSucceeds() {
+    func testActionTypeInitializationSucceeds() {
         let validStringActionType = ActionType.init(name: "Action type", backgroundImage: UIImage.init())
         XCTAssertNotNil(validStringActionType)
         // Confirm that name gets turned into uppercase.
@@ -45,8 +45,22 @@ class iosTests: XCTestCase {
     }
     
     // Confirm that the ActionType initialier returns nil when passed an empty name.
-    func testMealInitializationFails() {
+    func testActionTypeInitializationFails() {
         let emptyStringActionType = ActionType.init(name: "", backgroundImage: UIImage.init())
         XCTAssertNil(emptyStringActionType)
+    }
+
+    //MARK: ActionPreview Class Tests
+    
+    // Confirm that the ActionPreview initializer returns a ActionPreview object when passed valid parameters.
+    func testActionPreviewInitializationSucceeds() {
+        let validStringActionPreview = ActionPreview.init(name: "Action", backgroundImage: UIImage.init(), points: 4)
+        XCTAssertNotNil(validStringActionPreview)
+    }
+    
+    // Confirm that the ActionType initialier returns nil when passed an empty name or negative or zero score.
+    func testActionPreviewInitializationFails() {
+        XCTAssertNil(ActionPreview.init(name: "", backgroundImage: UIImage.init(), points: 4))
+        XCTAssertNil(ActionPreview.init(name: "Action", backgroundImage: UIImage.init(), points: 0))
     }
 }
